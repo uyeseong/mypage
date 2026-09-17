@@ -3,359 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우예성 | Frontend Developer</title>
-    <!-- 구글 폰트 적용 (Pretendard 스타일의 Montserrat와 Noto Sans 조합) -->
-    <link href="https://googleapis.com" rel="stylesheet">
+    <title>우예성 | 포트폴리오</title>
     <style>
-        :root {
-            --bg-color: #0d0e12;
-            --card-bg: #161920;
-            --text-main: #ffffff;
-            --text-sub: #94a3b8;
-            --accent-glow: #38bdf8;
-            --accent-purple: #818cf8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        /* 클래식하고 깔끔한 모노톤 스타일링 */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Noto Sans KR', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
-
-        /* 부드러운 스크롤 */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* 컨테이너 */
-        .container {
-            max-width: 1100px;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 40px 20px;
+            background-color: #fbfbfb;
         }
 
-        /* 내비게이션 바 */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            backdrop-filter: blur(12px);
-            background: rgba(13, 14, 18, 0.8);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            color: #111;
         }
 
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: -1px;
-            background: linear-gradient(45deg, var(--accent-glow), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
+        section {
+            margin-bottom: 40px;
         }
 
-        .nav-links a {
-            color: var(--text-sub);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-glow);
-        }
-
-        /* 히어로 섹션 */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
-            filter: blur(40px);
-            pointer-events: none;
-        }
-
-        .hero-content h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
+        h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            color: #111;
             margin-bottom: 20px;
         }
 
-        .hero-content h1 span {
-            display: block;
-            background: linear-gradient(to right, #ffffff, var(--text-sub));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .profile-info p {
+            margin: 8px 0;
         }
 
-        .hero-content .highlight {
-            background: linear-gradient(45deg, var(--accent-glow), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .tech-list, .exp-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .hero-desc {
-            font-size: 1.25rem;
-            color: var(--text-sub);
-            max-width: 600px;
-            margin-bottom: 35px;
-            font-weight: 300;
+        .tech-item, .exp-item {
+            margin-bottom: 20px;
         }
 
-        .cta-btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(45deg, var(--accent-glow), var(--accent-purple));
-            color: #000;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 30px;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(56, 189, 248, 0.5);
-        }
-
-        /* 공통 섹션 스타일 */
-        section {
-            padding: 120px 0;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 4px;
-            background-color: var(--accent-glow);
-            border-radius: 2px;
-        }
-
-        /* About 섹션 */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .about-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--accent-glow);
-            margin-bottom: 15px;
-        }
-
-        /* 기술 스택 섹션 */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .tech-card {
-            background-color: var(--card-bg);
-            padding: 35px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .tech-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .tech-card p {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-        }
-
-        /* 경험(프로젝트) 섹션 */
-        .exp-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .exp-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            position: relative;
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 15px;
-        }
-
-        .exp-title {
-            font-size: 1.35rem;
-            font-weight: 700;
+        .tech-name, .exp-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #222;
         }
 
         .exp-period {
-            color: var(--accent-purple);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
             font-size: 0.9rem;
+            color: #888;
+            margin-left: 10px;
         }
 
-        /* 연락처 */
-        .contact-box {
-            background: linear-gradient(135deg, #161920 0%, #0d0e12 100%);
-            border-radius: 24px;
-            padding: 60px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .contact-box p {
-            color: var(--text-sub);
-            margin-bottom: 30px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .contact-item {
-            color: var(--text-main);
-            text-decoration: none;
-            padding: 10px 24px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover {
-            background: var(--text-main);
-            color: #000;
-            transform: translateY(-2px);
+        .desc {
+            margin: 5px 0 0 0;
+            color: #555;
         }
 
         footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
             text-align: center;
-            padding: 40px 0;
-            color: #475569;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* 반응형 모바일 디자인 */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.8rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .exp-header { flex-direction: column; gap: 5px; }
-            .contact-links { flex-direction: column; }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- 상단 고정 바 -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo">YE SUNG</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#tech">Tech</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>우예성</h1>
+        <p class="subtitle">매일 한 걸음씩 성장하는 프론트엔드 개발자</p>
+    </header>
 
-    <!-- 메인 대문 (Hero) -->
-    <div class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>
-                    <span>HELLO, I'M</span>
-                    <span class="highlight">WOO YE SUNG</span>
-                </h1>
-                <p class="hero-desc">
-                    세명컴퓨터고등학교 스마트보안솔루션과에서 보안의 기초를 다지고, 매일 노력을 더해 프론트엔드 개발자로 거듭나고 있습니다.
-                </p>
-                <a href="#contact" class="cta-btn">Get In Touch</a>
-            </div>
+    <!-- 소개 영역 -->
+    <section>
+        <h2>About Me</h2>
+        <div class="profile-info">
+            <p><strong>소속:</strong> 세명컴퓨터고등학교 스마트보안솔루션과 (1학년 재학)</p>
+            <p><strong>경험:</strong> 1학년 1학기 학급 부회장</p>
+            <p class="desc">
+                보안을 전공하며 쌓은 컴퓨터 기초 지식과 부회장 활동으로 기른 책임감을 바탕으로 소통합니다. 
+                현재는 프론트엔드 개발자가 되기 위해 매일 리액트(React)를 학습하며 묵묵히 실력을 키워나가고 있습니다.
+            </p>
         </div>
-    </div>
+    </section>
 
-    <!-- About 섹션 -->
-    <section id="about">
-        <div class="container">
+    <!-- 기술 스택 영역 -->
+    <section>
+        <h2>Tech Stack</h2>
+        <ul class="tech-list">
+            <li class="tech-item">
+                <span class="tech-name">JavaScript</span>
+                <p class="desc">웹의 동적인 기능을 구현하고 로직을 설계할 수 있으며, 현재 배우고 있는 리액트 학습의 단단한 기반이 됩니다.</p>
+            </li>
+            <li class="tech-item">
+                <span class="tech-name">Linux</span>
+                <p class="desc">스마트보안솔루션과 전공을 통해 기본 명령어를 숙지하고 있으며, 개발 환경을 이해하고 활용할 수 있습니다.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 경험 영역 -->
+    <section>
+        <h2>Experience</h2>
+        <ul class="exp-list">
+            <li class="exp-item">
+                <span class="exp-title">학급 부회장 활동</span>
+                <span class="exp-period">(1학년 1학기)</span>
+                <p class="desc">학급 내 의견을 조율하며 경청과 소통의 중요성을 배웠습니다. 이 경험은 추후 개발자 간의 협업 리더십으로 이어질 것입니다.</p>
+            </li>
+            <li class="exp-item">
+                <span class="exp-title">React & 프론트엔드 독학</span>
+                <span class="exp-period">(현재 진행 중)</span>
+                <p class="desc">매일 꾸준히 공식 문서와 컴포넌트 기반 설계를 학습하고 있으며, 나만의 첫 토이 프로젝트 완성을 목표로 하고 있습니다.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 연락처 영역 -->
+    <section>
+        <h2>Contact</h2>
+        <p>이메일: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com" target="_blank">://github.com</a></p>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>© 2026. 우예성 All rights reserved. | 부족함은 채우고, 노력은 배신하지 않는다.</p>
+    </footer>
+
+</body>
+</html>
