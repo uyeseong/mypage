@@ -1,297 +1,163 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>나의 3년 로드맵</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우예성 | 포트폴리오</title>
+    <style>
+        /* 클래식하고 깔끔한 모노톤 스타일링 */
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fbfbfb;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+        header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
 
-  <style>
-    /* Reset & Base */
-    *{margin:0;padding:0;box-sizing:border-box}
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
 
-    :root{
-      --bg:#000;
-      --muted:#9aa0a6;
-    }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0;
+        }
 
-    body{
-      font-family:'Noto Sans KR',sans-serif;
-      background:var(--bg);
-      color:#fff;
-      line-height:1.6;
-    }
+        section {
+            margin-bottom: 40px;
+        }
 
-    /* rainbow grid background */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      background:
-        repeating-linear-gradient(0deg,
-          rgba(255,0,100,0.08) 0px,
-          transparent 1px,
-          transparent 40px),
-        repeating-linear-gradient(90deg,
-          rgba(0,200,255,0.08) 0px,
-          transparent 1px,
-          transparent 40px);
-    }
+        h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            color: #111;
+            margin-bottom: 20px;
+        }
 
-    /* Layout */
-    .container{
-      max-width:1200px;
-      margin:40px auto;
-      padding:0 20px;
-    }
+        .profile-info p {
+            margin: 8px 0;
+        }
 
-    header{
-      text-align:center;
-      margin-bottom:28px;
-    }
+        .tech-list, .exp-list {
+            list-style: none;
+            padding: 0;
+        }
 
-    h1{
-      font-size:3rem;
-      font-family:'Orbitron',sans-serif;
-      letter-spacing:1px;
-      background:linear-gradient(90deg,
-        #ff004c,#ff9900,#ffee00,#00ff6a,#00c3ff,#7a00ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+        .tech-item, .exp-item {
+            margin-bottom: 20px;
+        }
 
-    .subtitle{
-      color:#ccc;
-      margin-top:10px;
-      font-size:1rem;
-    }
+        .tech-name, .exp-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #222;
+        }
 
-    /* Grid */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:16px;
-    }
+        .exp-period {
+            font-size: 0.9rem;
+            color: #888;
+            margin-left: 10px;
+        }
 
-    .card{
-      border-radius:16px;
-      padding:20px;
-      background:rgba(255,255,255,0.04);
-      position:relative;
-      overflow:hidden;
-    }
+        .desc {
+            margin: 5px 0 0 0;
+            color: #555;
+        }
 
-    /* rainbow border */
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      padding:2px;
-      border-radius:16px;
-      background:linear-gradient(90deg,
-        #ff004c,#ff9900,#ffee00,#00ff6a,#00c3ff,#7a00ff);
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;
-      mask-composite:exclude;
-      pointer-events:none;
-    }
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+        }
 
-    .span-4{grid-column:span 4}
-    .span-6{grid-column:span 6}
-    .span-8{grid-column:span 8}
-    .span-12{grid-column:span 12}
-
-    @media (max-width:960px){
-      .span-4,.span-6,.span-8{grid-column:span 12}
-    }
-
-    h2{
-      font-family:'Orbitron',sans-serif;
-      font-size:1.4rem;
-      margin-bottom:10px;
-      background:linear-gradient(90deg,#ff004c,#00c3ff,#ffee00);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    p,li{font-size:0.98rem}
-
-    ul{padding-left:18px;margin-top:6px}
-
-    .tag{
-      display:inline-block;
-      font-size:0.82rem;
-      border-radius:999px;
-      padding:4px 10px;
-      margin:4px 6px 0 0;
-      border:1px solid rgba(255,255,255,0.25);
-      color:#eee;
-      background:rgba(255,255,255,0.03);
-    }
-
-    .divider{
-      height:1px;
-      margin:14px 0;
-      background:linear-gradient(90deg,
-        transparent,#ff004c,#00c3ff,#ffee00,transparent);
-    }
-
-    .quote{
-      font-family:'Orbitron',sans-serif;
-      text-align:center;
-      font-size:1.2rem;
-      margin-top:10px;
-      background:linear-gradient(90deg,#ff004c,#00c3ff,#ffee00);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .timeline{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
-
-    .tl{
-      border-radius:12px;
-      padding:12px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.1);
-    }
-
-    .tl h3{
-      font-family:'Orbitron',sans-serif;
-      font-size:1rem;
-      margin-bottom:6px;
-    }
-
-    .checklist li{margin:4px 0}
-
-    .muted{color:#bbb}
-
-    a{
-      color:#00c3ff;
-      text-decoration:none;
-      border-bottom:1px dotted #00c3ff;
-    }
-
-    footer{
-      text-align:center;
-      color:#aaa;
-      margin:24px 0 10px;
-      font-size:0.9rem;
-    }
-
-    /* KPI */
-    .kpi{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:8px;
-    }
-
-    .kpi .item{
-      flex:1 1 160px;
-      border-radius:12px;
-      padding:10px 12px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.1);
-    }
-
-    .kpi .num{
-      font-family:'Orbitron',sans-serif;
-      font-size:1.4rem;
-      display:block;
-      background:linear-gradient(90deg,#ff004c,#00c3ff,#ffee00);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-  </style>
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
 
+    <!-- 헤더 영역 -->
     <header>
-      <h1>MY 3 YEAR PLAN</h1>
-      <p class="subtitle">꿈을 향해 끊임없이 성장하는 개발자 로드맵 (집중 · 반복 · 공유)</p>
+        <h1>우예성</h1>
+        <p class="subtitle">매일 한 걸음씩 성장하는 프론트엔드 개발자</p>
     </header>
 
-    <!-- 비전 & 가치 -->
-    <section class="grid">
-      <div class="card span-8">
-        <h2>비전</h2>
-        <p>사람들에게 실질적인 가치를 주고 팀과 함께 성장하는 개발자가 된다.</p>
-        <div class="divider"></div>
-        <h2>핵심 가치</h2>
-        <ul>
-          <li>사용자 중심: 기능보다 문제 해결과 경험을 우선한다.</li>
-          <li>꾸준함: 매일 작은 진전을 쌓아 복리효과를 만든다.</li>
-          <li>공유와 협업: 기록하고 나누며 더 빠르게 배운다.</li>
+    <!-- 소개 영역 -->
+    <section>
+        <h2>About Me</h2>
+        <div class="profile-info">
+            <p><strong>소속:</strong> 세명컴퓨터고등학교 스마트보안솔루션과 (1학년 재학)</p>
+            <p><strong>경험:</strong> 1학년 1학기 학급 부회장</p>
+            <p class="desc">
+                보안을 전공하며 쌓은 컴퓨터 기초 지식과 부회장 활동으로 기른 책임감을 바탕으로 소통합니다. 
+                현재는 프론트엔드 개발자가 되기 위해 매일 리액트(React)를 학습하며 묵묵히 실력을 키워나가고 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 기술 스택 영역 -->
+    <section>
+        <h2>Tech Stack</h2>
+        <ul class="tech-list">
+            <li class="tech-item">
+                <span class="tech-name">JavaScript</span>
+                <p class="desc">웹의 동적인 기능을 구현하고 로직을 설계할 수 있으며, 현재 배우고 있는 리액트 학습의 단단한 기반이 됩니다.</p>
+            </li>
+            <li class="tech-item">
+                <span class="tech-name">Linux</span>
+                <p class="desc">스마트보안솔루션과 전공을 통해 기본 명령어를 숙지하고 있으며, 개발 환경을 이해하고 활용할 수 있습니다.</p>
+            </li>
         </ul>
-      </div>
-
-      <div class="card span-4">
-        <h2>관심 분야</h2>
-        <span class="tag"> 프론트엔드</span>
-        <h2>존경하는 인물</h2>
-        <p class="muted">꾸준히 배우고, 사용자 문제를 집요하게 해결하는 개발자들.</p>
-      </div>
     </section>
 
-    <!-- 3개년 로드맵 -->
-    <section class="card span-12" style="margin-top:16px">
-      <h2>3개년 로드맵</h2>
-      <div class="timeline" style="margin-top:8px">
-
-        <div class="tl">
-          <h3>Year 1: 기초 탄탄히</h3>
-          <ul class="checklist">
-            <li>팀 프로젝트 1개(요구사항→설계→배포 전 과정 경험)</li>
-            <li>블로그 주 1회 기록, Git 커밋 데일리 스트릭</li>
-          </ul>
-        </div>
-
-        <div class="tl">
-          <h3>Year 2: 실전 역량 강화</h3>
-          <ul class="checklist">
-            <li>테스트 주도 개발 습관화</li>
-          </ul>
-        </div>
-
-        <div class="tl">
-          <h3>Year 3: 전문성·취업</h3>
-          <ul class="checklist">
-            <li>이력서/포트폴리오 최적화</li>
-            <li>취업 후 온보딩 전략</li>
-          </ul>
-        </div>
-
-      </div>
+    <!-- 경험 영역 -->
+    <section>
+        <h2>Experience</h2>
+        <ul class="exp-list">
+            <li class="exp-item">
+                <span class="exp-title">학급 부회장 활동</span>
+                <span class="exp-period">(1학년 1학기)</span>
+                <p class="desc">학급 내 의견을 조율하며 경청과 소통의 중요성을 배웠습니다. 이 경험은 추후 개발자 간의 협업 리더십으로 이어질 것입니다.</p>
+            </li>
+            <li class="exp-item">
+                <span class="exp-title">React & 프론트엔드 독학</span>
+                <span class="exp-period">(현재 진행 중)</span>
+                <p class="desc">매일 꾸준히 공식 문서와 컴포넌트 기반 설계를 학습하고 있으며, 나만의 첫 토이 프로젝트 완성을 목표로 하고 있습니다.</p>
+            </li>
+        </ul>
     </section>
 
-    <!-- KPI -->
-    <section class="card span-12" style="margin-top:16px">
-      <div class="kpi">
-        <div class="item"><span class="num">3</span>자격증</div>
-      </div>
+    <!-- 연락처 영역 -->
+    <section>
+        <h2>Contact</h2>
+        <p>이메일: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com" target="_blank">://github.com</a></p>
     </section>
 
-    <!-- 다짐 -->
-    <section class="card span-12" style="margin-top:16px;text-align:center">
-      <h2>다짐</h2>
-      <p>포기하지 않는다. 매일 1% 성장한다. 기록하고 공유한다.</p>
-      <p class="quote">"포기하지 않는 사람이 성공한다"</p>
-    </section>
-
+    <!-- 푸터 -->
     <footer>
-      © 나의 3년 로드맵 · 업데이트 주기: 월간 회고 후 수정
+        <p>© 2026. 우예성 All rights reserved. | 부족함은 채우고, 노력은 배신하지 않는다.</p>
     </footer>
 
-  </div>
 </body>
 </html>
