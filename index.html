@@ -71,17 +71,14 @@
 
         nav ul {
             display: flex;
-            gap: 30px;
-
+            gap: 25px;
             list-style: none;
         }
 
         nav ul li a {
             color: #172033;
-
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-
             transition: 0.3s;
         }
 
@@ -98,7 +95,6 @@
             min-height: 100vh;
 
             max-width: 1100px;
-
             margin: auto;
 
             padding: 150px 30px 80px;
@@ -132,7 +128,6 @@
 
         .home-description {
             color: #596273;
-
             font-size: 20px;
         }
 
@@ -167,7 +162,6 @@
 
         .button:hover {
             background: #1d4ed8;
-
             transform: translateY(-3px);
         }
 
@@ -199,7 +193,6 @@
 
         .section-title h2 {
             font-size: 42px;
-
             margin-top: 5px;
         }
 
@@ -229,19 +222,16 @@
 
         .dream-icon {
             font-size: 50px;
-
             margin-bottom: 15px;
         }
 
         .dream-card h3 {
             font-size: 30px;
-
             margin-bottom: 15px;
         }
 
         .dream-card p {
             color: #596273;
-
             margin-bottom: 10px;
         }
 
@@ -256,13 +246,11 @@
 
         .goal-section {
             background: #eef2f7;
-
             max-width: none;
         }
 
         .goal-inner {
             max-width: 1100px;
-
             margin: auto;
         }
 
@@ -300,11 +288,129 @@
 
         .goal-card h3 {
             font-size: 24px;
-
             margin: 10px 0;
         }
 
         .goal-card p {
+            color: #687386;
+        }
+
+
+        /* ==============================
+           공부 방법
+        ============================== */
+
+        .study-section {
+            background: white;
+        }
+
+        .study-container {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .study-card {
+            padding: 35px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .study-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .study-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .study-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .study-card p {
+            color: #687386;
+            margin-bottom: 10px;
+        }
+
+        .study-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .study-list li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           자격증
+        ============================== */
+
+        .certificate-section {
+            background: #eef2f7;
+            max-width: none;
+        }
+
+        .certificate-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .certificate-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            padding: 35px;
+
+            background: white;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+            transition: 0.3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 15px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 32px;
+        }
+
+        .certificate-card h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .certificate-card p {
             color: #687386;
         }
 
@@ -317,13 +423,11 @@
             padding: 120px 30px;
 
             background: #172033;
-
             color: white;
         }
 
         .future-inner {
             max-width: 850px;
-
             margin: auto;
         }
 
@@ -333,7 +437,6 @@
 
         .future h2 {
             font-size: 60px;
-
             line-height: 1.2;
 
             margin-bottom: 30px;
@@ -385,26 +488,23 @@
 
         .contact-card h3 {
             font-size: 20px;
-
             margin: 10px 0;
         }
 
         .contact-card a {
             color: #2563eb;
-
             word-break: break-all;
         }
 
 
         /* ==============================
-           아래쪽
+           푸터
         ============================== */
 
         footer {
             padding: 30px;
 
             background: #0f172a;
-
             color: #94a3b8;
 
             text-align: center;
@@ -414,7 +514,7 @@
 
 
         /* ==============================
-           모바일 화면
+           모바일
         ============================== */
 
         @media (max-width: 768px) {
@@ -424,11 +524,12 @@
             }
 
             nav ul {
-                gap: 12px;
+                gap: 10px;
             }
 
             nav ul li:nth-child(2),
-            nav ul li:nth-child(3) {
+            nav ul li:nth-child(3),
+            nav ul li:nth-child(4) {
                 display: none;
             }
 
@@ -448,6 +549,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .study-container {
+                grid-template-columns: 1fr;
+            }
+
             .contact-container {
                 grid-template-columns: 1fr;
             }
@@ -458,6 +563,11 @@
 
             .future h2 {
                 font-size: 42px;
+            }
+
+            .certificate-card {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -492,6 +602,14 @@
                 </li>
 
                 <li>
+                    <a href="#study">공부</a>
+                </li>
+
+                <li>
+                    <a href="#certificate">자격증</a>
+                </li>
+
+                <li>
                     <a href="#contact">연락처</a>
                 </li>
 
@@ -504,13 +622,18 @@
 
 
     <!-- ==============================
-         메인 화면
+         메인
     ============================== -->
 
     <main>
 
 
-        <section id="home" class="home">
+        <!-- 첫 화면 -->
+
+        <section
+            id="home"
+            class="home"
+        >
 
             <p class="small-title">
                 MY DEVELOPER STORY
@@ -518,7 +641,6 @@
 
             <h2>
                 안녕하세요.<br>
-
                 <span>우예성</span>입니다.
             </h2>
 
@@ -599,7 +721,6 @@
 
                 <div class="goal-inner">
 
-
                     <div class="section-title">
 
                         <p>MY GOAL</p>
@@ -631,7 +752,6 @@
                         </div>
 
 
-
                         <div class="goal-card">
 
                             <span class="goal-number">
@@ -648,7 +768,6 @@
                             </p>
 
                         </div>
-
 
 
                         <div class="goal-card">
@@ -670,7 +789,6 @@
                         </div>
 
 
-
                         <div class="goal-card">
 
                             <span class="goal-number">
@@ -690,7 +808,6 @@
                         </div>
 
 
-
                         <div class="goal-card">
 
                             <span class="goal-number">
@@ -698,16 +815,159 @@
                             </span>
 
                             <h3>
-                                CodeUp
+                                CodeUp Python
                             </h3>
 
                             <p>
-                                코드업 문제를 완전히 풀어서
-                                프로그래밍 기초를 쌓겠습니다.
+                                집에서 코드업 파이썬 문제를
+                                풀면서 프로그래밍 기초를
+                                하나하나 쌓겠습니다.
                             </p>
 
                         </div>
 
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             공부하고 있는 내용
+        ============================== -->
+
+        <section
+            id="study"
+            class="section study-section"
+        >
+
+            <div class="section-title">
+
+                <p>MY STUDY</p>
+
+                <h2>현재 공부하고 있는 것</h2>
+
+            </div>
+
+
+            <div class="study-container">
+
+
+                <!-- 학교 -->
+
+                <div class="study-card">
+
+                    <div class="study-icon">
+                        🏫
+                    </div>
+
+                    <h3>
+                        학교에서 배우는 것
+                    </h3>
+
+                    <p>
+                        학교에서는 웹 개발을 배우면서
+                        프론트엔드 개발자가 되기 위한
+                        기초를 공부하고 있습니다.
+                    </p>
+
+                    <ul class="study-list">
+
+                        <li>HTML</li>
+
+                        <li>CSS</li>
+
+                        <li>JavaScript</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- 집 -->
+
+                <div class="study-card">
+
+                    <div class="study-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        집에서 공부하는 것
+                    </h3>
+
+                    <p>
+                        학교에서 배운 내용뿐만 아니라
+                        집에서도 꾸준히 프로그래밍과
+                        컴퓨터 기초를 공부하고 있습니다.
+                    </p>
+
+                    <ul class="study-list">
+
+                        <li>Linux</li>
+
+                        <li>CodeUp</li>
+
+                        <li>Python 문제 풀이</li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             자격증
+        ============================== -->
+
+        <section
+            id="certificate"
+            class="certificate-section"
+        >
+
+            <div class="section">
+
+                <div class="certificate-inner">
+
+                    <div class="section-title">
+
+                        <p>MY CERTIFICATE</p>
+
+                        <h2>자격증</h2>
+
+                    </div>
+
+
+                    <div class="certificate-card">
+
+                        <div class="certificate-icon">
+                            🏆
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                리눅스 프로그래밍 기능사
+                            </h3>
+
+                            <p>
+                                리눅스와 프로그래밍에 대한
+                                기초 역량을 쌓기 위해
+                                공부하고 있습니다.
+                            </p>
+
+                        </div>
 
                     </div>
 
@@ -746,9 +1006,10 @@
 
                 <p>
                     그리고 <strong>리눅스</strong>와
-                    <strong>코드업 문제</strong>를
-                    완전히 풀어서
-                    기초부터 하나하나씩 쌓아가는 것입니다.
+                    <strong>코드업 파이썬 문제</strong>를
+                    꾸준히 풀어서
+                    프로그래밍 기초부터 하나하나씩
+                    쌓아가겠습니다.
                 </p>
 
             </div>
@@ -791,13 +1052,10 @@
                     </h3>
 
                     <a href="mailto:uyeseongye@gmail.com">
-
                         uyeseongye@gmail.com
-
                     </a>
 
                 </div>
-
 
 
                 <div class="contact-card">
@@ -814,9 +1072,7 @@
                         href="https://github.com/uyeseong/mypage"
                         target="_blank"
                     >
-
                         github.com/uyeseong/mypage
-
                     </a>
 
                 </div>
@@ -855,17 +1111,14 @@
             document.getElementById("goalButton");
 
 
-        // 버튼 클릭
+        // 버튼을 클릭하면 목표 부분으로 이동
         goalButton.addEventListener(
             "click",
             function () {
 
-                // 목표 영역 가져오기
                 const goalSection =
                     document.getElementById("goal");
 
-
-                // 목표 영역으로 부드럽게 이동
                 goalSection.scrollIntoView({
                     behavior: "smooth"
                 });
@@ -874,7 +1127,7 @@
         );
 
 
-        // 개발자 콘솔에 출력
+        // 개발자 콘솔에 정보 출력
         console.log(
             "우예성의 프론트엔드 개발자 홈페이지입니다."
         );
@@ -884,7 +1137,15 @@
         );
 
         console.log(
-            "목표 : HTML, CSS, JavaScript, Linux, CodeUp"
+            "학교 : HTML, CSS, JavaScript"
+        );
+
+        console.log(
+            "집 : Linux, CodeUp, Python"
+        );
+
+        console.log(
+            "자격증 : 리눅스 프로그래밍 기능사"
         );
 
     </script>
